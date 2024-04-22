@@ -1,0 +1,212 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+ul { list-style: none; }
+a { text-decoration: none; color: inherit;}
+body { color: #333; background-color: #fff; }
+.wrap { width: 1200px; margin: 0 auto;}
+
+.header { 
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.gnb { 
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+}
+
+.gnb > li {
+    position: relative;
+}
+
+.gnb > li > a {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 50px;
+}
+
+.gnb > li:hover > a {
+    color: orangered;
+}
+
+.gnb .sub  {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.gnb .sub li a {
+    background-color: gainsboro;
+    display: block;
+    padding: 14px;
+}
+
+.gnb .sub li a:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+
+
+.slider {
+    height: 300px;
+    overflow: hidden;
+}
+
+.slide {
+    position: relative;
+}
+
+.sliders h2 {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 40px;
+    text-shadow: 3px 3px 8px rgb(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.658);
+    transform: translate(-50% , -25%);
+    padding: 15px 60px;
+    border-radius: 20px;
+}
+
+.slide {}
+
+.slider img {
+    display: block;
+}
+
+.contents{
+    display: flex;
+    padding: 10px 0;
+    gap: 15px;
+}
+
+.tab, .banner, .link{
+    width: 390px;
+}
+
+.banner img, .link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tab_title {
+    display: flex;
+    gap: 4px;
+    border-bottom: 4px solid rgb(180, 50, 3);
+}
+
+.tab_title h3 {
+    height: 40px;
+    background-color: #ddd;
+    flex: 1;
+    text-align: center;
+    line-height: 40px;
+    font-weight: normal;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tab_title h3.on {
+    background-color: rgb(180, 50, 3);
+    color: #fff;
+}
+
+ .notice {
+    padding: 10px;
+    /* display: none; */
+}    
+ .notice li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notice li a {
+    display: block;
+    padding: 6px 0;
+    background-color: gainsboro;
+    width: 73%;
+    /* ... 적용시키기 3개 써야함 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notice li a:hover {
+    text-decoration: underline;
+}
+
+.tab_contents .gallery {
+    display: none;
+    text-align: center;
+}
+
+
+.gallery li {
+    display: inline-block;
+    padding: 25px 15px;
+}
+
+
+
+.banner {}
+
+.link {}
+
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 20px;
+    background-color: #ddd;
+}
+
+.footer .sns {
+    display: flex;
+    gap: 15px;
+}
+
+.modal {
+    /* display: none; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 360px;
+    background-color: #ffffff;
+    border: 1px solid #666;
+    padding: 30px;
+    transform: translate(-50% , -90%);
+}
+
+.modal h3 {
+    text-align: center;
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #999;
+}
+.modal p {
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.modal button {
+    border: none;
+    padding: 7px 12px;
+    background-color: #dfdfdf;
+    border: 1px solid #333;
+    border-radius: 15%;
+    margin-left: 150px;
+    cursor: pointer;
+}
