@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JUST 쇼핑몰</title>
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./scripte/jquery-1.12.4.js"></script>
 </head>
 
 <body>
@@ -58,13 +59,13 @@
         <div class="slider">
             <div class="sliders">
                 <div class="slide"><img src="./images/slide (1).jpg" alt="슬라이드 이미지1">
-                    <h2>1. 쇼핑몰 홈페이지 새단장</h2>
+                    <h2>쇼핑몰 홈페이지 새단장</h2>
                 </div>
                 <div class="slide"><img src="./images/slide (2).jpg" alt="슬라이드 이미지2">
-                    <h2>2. 이달의 쇼핑 이벤트</h2>
+                    <h2>이달의 쇼핑 이벤트</h2>
                 </div>
                 <div class="slide"><img src="./images/slide (3).jpg" alt="슬라이드 이미지3">
-                    <h2>3. 장바구니 할인 이벤트</h2>
+                    <h2>장바구니 할인 이벤트</h2>
                 </div>
             </div>
                 
@@ -74,20 +75,20 @@
 
             <div class="tab">
                 <div class="tab_title">
-                    <h3 class="on">공지사항</h3>
+                    <h3 class="active">공지사항</h3>
                     <h3>갤러리</h3>
                 </div>
 
                 <div class="tab_contents">
 
-                    <ul class="notice">
-                        <li><a href="#">신규회원 대상 할인 이벤트 안내 Lorem, ipsum dolor.</a><span>2020.11.23</span></li>
+                    <ul class="notice item">
+                        <li><a href="#" id="modal_notice">신규회원 대상 할인 이벤트 안내 Lorem, ipsum dolor.</a><span>2020.11.23</span></li>
                         <li><a href="#">S/S 시즌 신규 의류 신상품 안내 Lorem, ipsum dolor.</a><span>2020.11.23</span></li>
                         <li><a href="#">반품/환불 규정에 대해 알려드립니다</a><span>2020.11.23</span></li>
                         <li><a href="#">3월 재입고 품목을 알려드립니다</a><span>2020.11.23</span></li>
                     </ul>
 
-                    <ul class="gallery">
+                    <ul class="gallery item">
                         <li><a href="#"><img src="./images/gallery (1).jpg" alt="갤러리 이미지 1"></a></li>
                         <li><a href="#"><img src="./images/gallery (2).jpg" alt="갤러리 이미지 2"></a></li>
                         <li><a href="#"><img src="./images/gallery (3).jpg" alt="갤러리 이미지 3"></a></li>
@@ -128,8 +129,62 @@
     <div class="modal">
         <h3>신규회원 대상 이벤트 안내</h3>
         <p>즐거운 쇼핑 환경을 위해 항상 노력하는 JUST 쇼핑몰입니다. <br> 고객님들께 한 단계 더 나아가 보답하는 ON쇼핑몰이 되고자신규회원 대상 10% 할인 이벤트를 실시하고 있습니다. <br> 웹과 모바일에서 모두 이용 가능하며, <br> 수준 높은 서비스를 위해 앞으로도 꾸준히 <br> 노력할 것을 약속드립니다.</p>
-        <button>닫기</button>
+        <button id="modal_btn">닫기</button>
     </div>
+
+
+
+    <script>
+
+    $(function(){
+        $(".gnb").hover(
+            function(){
+                $(".sub").stop().slideDown()
+            },
+            function(){
+                $(".sub").stop().slideUp()
+            }
+            )
+        })
+        // gnb
+
+
+
+        // modal
+        $(function(){
+            $("#modal_notice").click(function(){
+                $(".modal").show();
+            });
+        });
+
+        $("#modal_btn").click(function(){
+            $(".modal").hide()
+        })
+        // modal
+
+        // slide
+        setInterval(function(){
+            $(".sliders").animate({top: "-100%"}, function(){
+                $(this).append($(".slide").eq(0))
+                $(this).css("top", 0)
+            })
+        }, 2200)
+        // slide
+  
+        //tab
+        console.log($("tab_contents_item"))
+
+        $(".tab_title h3").click(function(){
+            $(".tab_title h3").removeClass("active")
+            $(this).addClass("active")
+
+            var idx = $(this).index()
+            $(".tab_contents .item").hide()
+            $(".tab_contents .item").eq(idx).show()
+        })
+
+
+    </script>
 
 </body>
 

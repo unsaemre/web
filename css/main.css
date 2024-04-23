@@ -39,6 +39,7 @@ body { color: #333; background-color: #fff; }
     left: 0;
     width: 100%;
     text-align: center;
+    z-index: 1;
 }
 
 .gnb .sub li a {
@@ -58,10 +59,17 @@ body { color: #333; background-color: #fff; }
     height: 300px;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
 }
 
 .slide {
     position: relative;
+}
+
+.sliders {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .sliders h2 {
@@ -116,7 +124,7 @@ body { color: #333; background-color: #fff; }
     cursor: pointer;
 }
 
-.tab_title h3.on {
+.tab_title h3.active {
     background-color: rgb(180, 50, 3);
     color: #fff;
 }
@@ -133,7 +141,6 @@ body { color: #333; background-color: #fff; }
 .notice li a {
     display: block;
     padding: 6px 0;
-    background-color: gainsboro;
     width: 73%;
     /* ... 적용시키기 3개 써야함 */
     white-space: nowrap;
@@ -182,7 +189,7 @@ body { color: #333; background-color: #fff; }
 }
 
 .modal {
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
