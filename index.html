@@ -6,6 +6,7 @@
     <title>JUST 쇼핑몰</title>
     <link rel="stylesheet" href="./css/main.css">
     <script src="./scripte/jquery-1.12.4.js"></script>
+    <script src="./scripte/main.js"></script>
 </head>
 
 <body>
@@ -113,14 +114,20 @@
                 <img src="./images/footerLogo.png" alt="하단 로고">
             </div>
 
-            <p>COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED</p>
 
-            <div class="sns">
-                <a href="#"><img src="./images/sns1.jpg" alt="페이스북"></a>
-                <a href="#"><img src="./images/sns2.jpg" alt="트위터"></a>
-                <a href="#"><img src="./images/sns3.jpg" alt="인스타그램"></a>
+            <div class="footer2">
+                <div class="copy">
+
+                    <p>COPYRIGHTⓒ by WEBDESIGN. ALL RIGHTS RESERVED</p>
+                </div>
+                
+                <div class="sns">
+                    <a href="#"><img src="./images/sns1.jpg" alt="페이스북"></a>
+                    <a href="#"><img src="./images/sns2.jpg" alt="트위터"></a>
+                    <a href="#"><img src="./images/sns3.jpg" alt="인스타그램"></a>
+                </div>
             </div>
-
+                
         </div>
 
 
@@ -136,51 +143,7 @@
 
     <script>
 
-    $(function(){
-        $(".gnb").hover(
-            function(){
-                $(".sub").stop().slideDown()
-            },
-            function(){
-                $(".sub").stop().slideUp()
-            })
-        })
-        // gnb
-
-
-
-        // modal
-        $(function(){
-            $("#modal_notice").click(function(){
-                $(".modal").show();
-            });
-        });
-
-        $("#modal_btn").click(function(){
-            $(".modal").hide()
-        })
-        // modal
-
-        // slide eq는 nth 차일드라고 생각해도 될듯?
-        setInterval(function(){
-            $(".sliders").animate({top: "-100%"}, function(){
-                $(this).append($(".slide").eq(0))
-                $(this).css("top", 0)
-            })
-        }, 2200)
-        // slide
-  
-        //tab
-        console.log($("tab_contents_item"))
-
-        $(".tab_title h3").click(function(){
-            $(".tab_title h3").removeClass("active")
-            $(this).addClass("active")
-
-            var idx = $(this).index()
-            $(".tab_contents .item").hide()
-            $(".tab_contents .item").eq(idx).show()
-        })
+ 
 
 
     </script>
