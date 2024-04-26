@@ -29,7 +29,7 @@ body { color: #333; background-color: #fff;}
     font-size: 22px;
 }
 
-.gnb > li > a:hover {
+.gnb > li:hover > a {
     color: darkorange;
 }
 
@@ -57,6 +57,9 @@ body { color: #333; background-color: #fff;}
     background-color: rgb(53, 66, 139);
     color: #fff;
 }
+
+
+
 
 .slider {
     overflow: hidden;
@@ -191,14 +194,24 @@ body { color: #333; background-color: #fff;}
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
     margin-top: 20px;
+    font-size: 20px;
     font-weight: bold;
+    color: #666;
+}
+
+.f_menu a {
+    padding: 0 20px;
+}
+
+.f_menu li:not(:last-child) {
+    border-right: 1px solid #666;
 }
 .copy {
     height: 50px;
     font-size: 14px;
     color: #999;
+    margin-left: 30px;
 }
 
 .modal {
@@ -233,4 +246,9 @@ body { color: #333; background-color: #fff;}
     padding: 8px 10px;
     cursor: pointer;
     border: 1px solid black;
+}
+
+.modal_btn:hover {
+    background-color: #333;
+    color: #fff;
 }
