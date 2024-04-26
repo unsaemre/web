@@ -60,7 +60,7 @@ body { color: #333; background-color: #fff; }
 
 .slider {
     height: 300px;
-    overflow: hidden;
+    /* overflow: hidden; */
     cursor: pointer;
     position: relative;
 }
@@ -69,7 +69,7 @@ body { color: #333; background-color: #fff; }
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
+    /* display: flex; */
 }
 .slide {
     position: relative;
