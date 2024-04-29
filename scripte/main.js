@@ -1,45 +1,32 @@
 $(function(){
-    $(".gnb li").hover(
-        function() {
-            $(this).find(".sub").stop().slideDown()
-        },
-        function() {
-            $(this).find(".sub").stop().slideUp()
-        })
+    $(".gnb").hover(function(){
+        $(".gnb ul").stop().slideDown()
+    }, function(){
+        $(".gnb ul").stop().slideUp()
     })
-    // gnb
+})
 
-
-
-    // modal
-    $(function(){
-        $("#modal_notice").click(function(){
-            $(".modal").show();
-        });
-    });
-
-    $("#modal_btn").click(function(){
-        $(".modal").hide()
+setInterval(function(){
+    $(".sliders").animate({top : "-100%"}, function(){
+        $(this).append($(".slide").eq(0))
+        $(this).css("top", 0)
     })
-    // modal
+},3000)
 
-    // slide eq는 nth 차일드라고 생각해도 될듯?
-    setInterval(function(){
-        $(".sliders").animate({left: "-100%"}, function(){
-            $(this).append($(".slide").eq(0))
-            $(this).css("left", 0)
-        })
-    }, 2200)
-    // slide
+$(".tab_title h3").click(function(){
+    $(".tab_title h3").removeClass("active")
+    $(this).addClass("active")
 
-    //tab
-    console.log($("tab_contents_item"))
+    
+    var idx = $(this).index()
+    $(".tab_contents ul").hide()
+    $(".tab_contents ul").eq(idx).show()
 
-    $(".tab_title h3").click(function(){
-        $(".tab_title h3").removeClass("active")
-        $(this).addClass("active")
+})
 
-        var idx = $(this).index()
-        $(".tab_contents .item").hide()
-        $(".tab_contents .item").eq(idx).show()
-    })
+$("#modal_popup").click(function(){
+    $(".modal").show()
+})
+$("#modal_btn").click(function(){
+    $(".modal").hide()
+})
