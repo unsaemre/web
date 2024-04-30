@@ -65,6 +65,7 @@ body {color: #333; background-color: #fff;}
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
 }
 
 .slide h2 {
@@ -212,7 +213,7 @@ body {color: #333; background-color: #fff;}
 .modal_contents {
     position: relative;
 }
-.modal_btn {
+.modal button {
     position: absolute;
     bottom: 20px;
     right: 24px;
