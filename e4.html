@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영상박물관</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./scripte/jquery-1.12.4.js"></script>
+    <script src="./scripte/main.js"></script>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="main">
+
+            <div class="header">
+                <div class="logo"><a href="#"><img src="./images/logo.png" alt="영상박물관"></a></div>
+                
+                <ul class="gnb">
+
+                    <li>
+                        <a href="#">철길 마을</a>
+                    <ul class="sub">
+                        <li><a href="#">마을 소개</a></li>
+                        <li><a href="#">마을의 유래</a></li>
+                        <li><a href="#">볼거리</a></li>
+                        <li><a href="#">찾아오시는 길</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">주변 맛집</a>
+                    <ul class="sub">
+                        <li><a href="#">빵집</a></li>
+                        <li><a href="#">간장게장</a></li>
+                        <li><a href="#">중국음식점</a></li>
+                        <li><a href="#">횟집</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">주변 여행지</a>
+                    <ul class="sub">
+                        <li><a href="#">은파호수공원</a></li>
+                        <li><a href="#">초원사진관</a></li>
+                        <li><a href="#">월명공원</a></li>
+                        <li><a href="#">진포해양공원</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">도움마당</a>
+                    <ul class="sub">
+                        <li><a href="#">교통정보</a></li>
+                        <li><a href="#">주변 주차장</a></li>
+                        <li><a href="#">자료실</a></li>
+                        <li><a href="#">자료마당</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                
+                <div class="login">
+                    <p>login</p>
+                    <p>account</p>
+                </div>
+
+            </div>
+
+            <div class="contents">
+                <div class="banner">
+                    <div class="photo">
+                        <img src="./images/link1.jpg" alt="배너">
+                    </div>
+                    <div class="texts">
+                        <h3>Lorem ipsum dolor amet.</h3>
+                        <p>Lorem ipsum consectetur adipisicing.</p>
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+                
+                <div class="notice">
+                    <h3>공지사항</h3>
+                    <ul>
+                        <li><a href="#">Lorem ipsum dolor sit.</a><span>2024.05.02</span></li>
+                        <li><a href="#">Lorem ipsum dolor sit.</a><span>2024.05.02</span></li>
+                        <li><a href="#">Lorem ipsum dolor sit.</a><span>2024.05.02</span></li>
+                        <li><a href="#">Lorem ipsum dolor sit.</a><span>2024.05.02</span></li>
+                    </ul>
+                </div>
+
+                <div class="gallery">
+                    <h3>갤러리</h3>
+                    <ul>
+                        <li><a href="#"><img src="./images/link1.jpg" alt="갤러리 이미지 1"></a>
+                            <p>Lorem ipsum dolor sit.</p>
+                        </li>
+                        <li><a href="#"><img src="./images/link2.jpg" alt="갤러리 이미지 2"></a>
+                            <p>Lorem ipsum dolor sit.</p>
+                        </li>
+
+                    </ul>
+                </div>
+                
+     
+
+            </div>
+
+            <div class="slider">
+                <div class="slide">
+                    <img src="./images/slide1.jpg" alt="슬라이드 1">
+                    <h2>Slide1</h2>
+                </div>
+                <div class="slide">
+                    <img src="./images/slide2.jpg" alt="슬라이드 2">
+                    <h2>Slide2</h2>
+                </div>
+                <div class="slide">
+                    <img src="./images/slide3.jpg" alt="슬라이드 3">
+                    <h2>Slide3</h2>
+        
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="f_logo"><img src="./images/f_logo.png" alt="하단로고"></div>
+            <div class="f_contents">
+                <div class="f_menu">
+                    <a href="#">FOOTERMENU1</a>
+                    <a href="#">FOOTERMENU2</a>
+                    <a href="#">FOOTERMENU3</a>
+                </div>
+
+                <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</P>
+
+            </div>
+            <ul class="sns">
+                <li><a href="#"><img src="./images/sns1.jpg" alt="sns1"></a></li>
+                <li><a href="#"><img src="./images/sns2.jpg" alt="sns2"></a></li>
+                <li><a href="#"><img src="./images/sns3.jpg" alt="sns3"></a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="modal">
+        <h3></h3>
+        <p></p>
+        <button></button>
+    </div>
+    
+</body>
+
+    <script>
+        $(".gnb > li").hover(function(){
+            $(this).find("ul").stop().fadeIn()
+        },
+        function(){
+            $(this).find("ul").stop().fadeOut()
+        }
+    )
+
+        // setInterval(function(){
+        //     $(".slides").animate({top : "-100%"}, function(){
+        //         var firstslide = $(".slide").eq(0)
+        //         $(this).append(firstslide)
+        //         $(this).css("top",0)
+        //     })
+        // },3000)
+
+
+        var slide = $(".slide")
+        var current = 0
+        slide.eq(0).show()
+
+        setInterval(function(){
+            var next = (current + 1) % slide.length
+            slide.eq(current).fadeOut()
+            slide.eq(next).fadeIn()
+            current = next
+        },3000)
+
+    </script>
+
+</html>
